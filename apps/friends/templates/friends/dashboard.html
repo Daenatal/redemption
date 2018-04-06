@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Friend Spot Hall</title>
+        {% load static %}
+        <link rel='stylesheet' href="{% static 'friends/css/main.css' %}" media='screen' title='no title' charset='utf-8'>
+    </head>
+    <body>
+        <a href='/logout'>Log Out</a>
+        <h2>Hello, {{mainuser.name}}!</h2>
+        <h3>Here is a list of your current friends:</h3>
+        {% if mainuser.buddies.all.count >= 1 %}
+            <table>
+                    <thead>
+                        <tr>
+                            <th>Alias</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for buddy in mainuser.buddies.all %}
+                        <tr>
+                            <td>{{ buddy.username }}</a></td>
+                            <td><a href='{{buddy.name}}/show'>View Profile</a><button type='button'><a href='{{buddy.name}}/remove'>Remove from Friends</a></button></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+            </table>
+        {% endif %}
+        <br>
+        <br>
+        <br>
+        <h3>Other users not on your friend list:</h3>
+        <table>
+                <thead>
+                    <tr>
+                        <th>Alias</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td><a href='{{user.name}}/show'>{{ user.username }}</a></td>
+                        <td><button type='button'><a href='{{user.name}}/add'>Add to Friends</a></button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </body>
+</html>

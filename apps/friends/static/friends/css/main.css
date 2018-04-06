@@ -1,0 +1,65 @@
+body {
+    width: 970px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+form {
+    width: 480px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    font-size: 14pt;
+    
+}
+
+input {
+    margin: 0 140px 10px 10px;
+    align-content: right;
+    
+}
+
+table {
+    border: 1px solid black;
+    width: 85%;
+}
+
+thead {
+    background-color: lightskyblue;
+}
+
+tbody {
+    text-align: center;
+}
+tbody > tr:nth-child(even){
+    background-color: lightgray;
+}
+th, td {
+    height: 10px;
+    margin: 0 40px;
+}
+
+a {
+    margin: 0 0 0 900px;
+}
+
+td a {
+    margin: 0 40px;
+}
+
+#addlink {
+    margin: 0 0 0 855px;
+}
+
+
+#addup, input {
+    color: blue;
+}
+
+.messages {
+    font-size: 12pt; 
+    color: rgb(236, 28, 28);
+}
